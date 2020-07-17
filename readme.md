@@ -1,8 +1,5 @@
 # ms
 
-[![Build Status](https://travis-ci.org/zeit/ms.svg?branch=master)](https://travis-ci.org/zeit/ms)
-[![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/zeit)
-
 Use this package to easily convert various time formats to milliseconds.
 
 ## Examples
@@ -38,6 +35,16 @@ ms(60000, { long: true })             // "1 minute"
 ms(2 * 60000, { long: true })         // "2 minutes"
 ms(-3 * 60000, { long: true })        // "-3 minutes"
 ms(ms('10 hours'), { long: true })    // "10 hours"
+```
+
+### Round to decimal place
+
+```js
+ms(60000, { decimal: 1 })                           // "1m"
+ms(66000, { decimal: 1 })                           // "1.1m"
+ms(-3 * 66000, { long: true, decimal: 1 })          // "-3.3 minutes"
+ms(234234234, { decimal: 2  })                      // "2.71m"
+ms(ms('10.5 hours'), { long: true, decimal: 1 })    // "10.5 hours"
 ```
 
 ## Features

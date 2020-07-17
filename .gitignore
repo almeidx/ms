@@ -1,5 +1,5 @@
-# dependencies
-node_modules
+# Packages
+node_modules/
 
-# logs
-npm-debug.log
+# Log files
+yarn-error.log
