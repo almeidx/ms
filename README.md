@@ -1,4 +1,4 @@
-# @almeidaa/ms
+# @almeidx/ms
 
 Use this package to easily convert various time formats to milliseconds.
 
