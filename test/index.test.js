@@ -2,10 +2,7 @@
 
 /* eslint-disable no-undef */
 
-/**
- * Dependencies.
- */
-
+let expect, ms;
 if (typeof require !== 'undefined') {
   expect = require('expect.js');
   ms = require('../src');
@@ -331,14 +328,12 @@ describe('ms(number, { long: true, decimal: n })', () => {
 
   it('should round with up to 3 decimal place', () => {
     expect(ms(234234234, { decimal: 3, long: true })).to.be('2.711 days');
-    expect(ms(234234234, { decimal: 1, long: true0 })).to.be('2.711 days');
+    expect(ms(234234234, { decimal: 1, long: true })).to.be('2.711 days');
 
     expect(ms(-234234234, { decimal: 3, long: true })).to.be('-2.711 days');
-    expect(ms(-234234234, { decimal: 1, long: true0 })).to.be('-2.711 days');
+    expect(ms(-234234234, { decimal: 1, long: true })).to.be('-2.711 days');
 
-    expect(ms(ms('10.54321 hours'), { decimal: 1, long: true })).to.be(
-      '10.5 hours',
-    );
+    expect(ms(ms('10.54321 hours'), { decimal: 1, long: true })).to.be('10.5 hours');
     expect(ms(-3 * 66121, { decimal: 1, long: true })).to.be('-3.3 minutes');
   });
 });

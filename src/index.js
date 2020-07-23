@@ -1,9 +1,5 @@
 'use strict';
 
-/**
- * Helpers.
- */
-
 const s = 1000;
 const m = s * 60;
 const h = m * 60;
@@ -18,14 +14,11 @@ const y = d * 365.25;
  *
  *  - `long` verbose formatting [false]
  *  - `decimal` decimal place [0], maximum 3 decimal place
- *
- * @param {String|Number} val
- * @param {Object} [options]
- * @throws {Error} throw an error if val is not a non-empty string or a number
- * @return {String|Number}
+ * @param {string|number} val The value to be parsed
+ * @param {Object} [options] The options for the parser
+ * @returns {?string|number} The amount of milliseconds parsed or the long format of it
  * @api public
  */
-
 module.exports = function ms(val, options) {
   options = options || {};
   let decimal = options.decimal ? Math.min(options.decimal, 3) : 0;
@@ -41,11 +34,10 @@ module.exports = function ms(val, options) {
 /**
  * Parse the given `str` and return milliseconds.
  *
- * @param {String} str
- * @return {Number}
+ * @param {string} str The string to be parsed
+ * @returns {?number} The amount of milliseconds parsed
  * @api private
  */
-
 function parse(str) {
   str = String(str);
   if (str.length > 100) return;
@@ -101,15 +93,6 @@ function parse(str) {
   }
 }
 
-/**
- * Short format for `ms`.
- *
- * @param {Number} ms
- * @param {Number} demical
- * @return {String}
- * @api private
- */
-
 function fmtShort(ms, decimal) {
   let msAbs = Math.abs(ms);
   let base = Math.pow(10, decimal);
@@ -121,15 +104,6 @@ function fmtShort(ms, decimal) {
   return `${ms}ms`;
 }
 
-/**
- * Long format for `ms`.
- *
- * @param {Number} ms
- * @param {Number} demical
- * @return {String}
- * @api private
- */
-
 function fmtLong(ms, demical) {
   let msAbs = Math.abs(ms);
   if (msAbs >= d) return plural(ms, msAbs, d, 'day', demical);
@@ -139,10 +113,6 @@ function fmtLong(ms, demical) {
 
   return `${ms} ms`;
 }
-
-/**
- * Pluralization helper.
- */
 
 function plural(ms, msAbs, n, name, demical) {
   let isPlural = msAbs >= n * 1.5;

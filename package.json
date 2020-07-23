@@ -1,8 +1,11 @@
 {
-  "name": "@almeeida/ms",
-  "version": "3.0.0",
+  "name": "@almeidx/ms",
+  "version": "1.0.0",
   "description": "Tiny millisecond conversion utility",
-  "repository": "https://github.com/Almeeida/ms",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/almeidx/ms.git"
+  },
   "main": "src/index.js",
   "files": [
     "src/index.js"
@@ -22,5 +25,16 @@
   },
   "eslintConfig": {
     "extends": "almeida"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/almeidx/ms/issues"
+  },
+  "homepage": "https://github.com/almeidx/ms#readme",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "ms"
+  ],
+  "author": "almeidx <almeidx@pm.me> (almeidx.me)"
 }

@@ -1,6 +1,15 @@
-# ms
+# @almeidaa/ms
 
 Use this package to easily convert various time formats to milliseconds.
+
+## Install
+```
+yarn add @almeidx/ms
+```
+or
+```
+npm i @almeidx/ms
+```
 
 ## Examples
 
@@ -53,15 +62,3 @@ ms(ms('10.5 hours'), { long: true, decimal: 1 })    // "10.5 hours"
 - If a number is supplied to `ms`, a string with a unit is returned
 - If a string that contains the number is supplied, it returns it as a number (e.g.: it returns `100` for `'100'`)
 - If you pass a string with a number and a valid unit, the number of equivalent milliseconds is returned
-
-## Related Packages
-
-- [ms.macro](https://github.com/knpwrs/ms.macro) - Run `ms` as a macro at build-time.
-
-## Caught a Bug?
-
-1. [Fork](https://help.github.com/articles/fork-a-repo/) this repository to your own GitHub account and then [clone](https://help.github.com/articles/cloning-a-repository/) it to your local device
-2. Link the package to the global module directory: `npm link`
-3. Within the module you want to test your local development instance of ms, just link it to the dependencies: `npm link ms`. Instead of the default one from npm, Node.js will now use your clone of ms!
-
-As always, you can run the tests using: `npm test`
