@@ -1,19 +1,13 @@
 {
-  "compilerOptions": {
-    "declaration": true,
-    "lib": [
-      "esnext"
-    ],
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "outDir": "dist",
-    "pretty": true,
-    "removeComments": false,
-    "strict": true,
-    "target": "es2017",
-		"declarationDir": "typings"
-  },
-  "include": [
-    "src"
-  ]
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "es5",
+		"rootDir": "src",
+		"outDir": "dist",
+		"declaration": true
+	},
+	"exclude": [
+		"node_modules",
+		"dist"
+	]
 }
