@@ -10,7 +10,8 @@
     "pretty": true,
     "removeComments": false,
     "strict": true,
-    "target": "es2017"
+    "target": "es2017",
+		"declarationDir": "typings"
   },
   "include": [
     "src"
