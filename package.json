@@ -1,20 +1,20 @@
 {
   "name": "@almeidx/ms",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Tiny millisecond conversion utility",
   "repository": "https://github.com/almeidx/ms.git",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "types": "typings/index.d.ts",
   "keywords": [
     "ms",
     "millisecond"
   ],
   "author": "almeidx <almeidx@pm.me> (almeidx.me)",
   "scripts": {
-    "build": "rimraf dist && tsc",
+    "build": "rimraf dist typings && tsc",
     "lint": "eslint src --ext ts",
     "lint:fix": "eslint src --ext ts --fix",
-    "prepublish": "rimraf dist && tsc"
+    "prepublish": "rimraf dist typings && tsc"
   },
   "license": "MIT",
   "devDependencies": {
