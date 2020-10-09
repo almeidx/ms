@@ -40,25 +40,8 @@ ms(ms('10 hours'))    // "10h"
 ### Time Format Written-Out
 
 ```js
-ms(60000, { long: true })             // "1 minute"
-ms(2 * 60000, { long: true })         // "2 minutes"
-ms(-3 * 60000, { long: true })        // "-3 minutes"
-ms(ms('10 hours'), { long: true })    // "10 hours"
+ms(60000, true)             // "1 minute"
+ms(2 * 60000, true)         // "2 minutes"
+ms(-3 * 60000, true)        // "-3 minutes"
+ms(ms('10 hours'), true)    // "10 hours"
 ```
-
-### Round to decimal place
-
-```js
-ms(60000, { decimal: 1 })                           // "1m"
-ms(66000, { decimal: 1 })                           // "1.1m"
-ms(-3 * 66000, { long: true, decimal: 1 })          // "-3.3 minutes"
-ms(234234234, { decimal: 2  })                      // "2.71m"
-ms(ms('10.5 hours'), { long: true, decimal: 1 })    // "10.5 hours"
-```
-
-## Features
-
-- Works both in [Node.js](https://nodejs.org) and in the browser
-- If a number is supplied to `ms`, a string with a unit is returned
-- If a string that contains the number is supplied, it returns it as a number (e.g.: it returns `100` for `'100'`)
-- If you pass a string with a number and a valid unit, the number of equivalent milliseconds is returned

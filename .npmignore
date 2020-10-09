@@ -1,1 +1,11 @@
-src
+.vscode/
+.idea/
+node_modules/
+src/
+.editorconfig
+.eslintrc.json
+.gitattributes
+.gitignore
+jest.config.js
+tsconfig.json
+yarn.lock
