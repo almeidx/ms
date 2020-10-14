@@ -12,7 +12,6 @@
     "prepublish": "rimraf dist && tsc",
     "test": "jest"
   },
-  "license": "MIT",
   "devDependencies": {
     "@types/jest": "^26.0.14",
     "@types/node": "^14.11.2",
@@ -34,5 +33,6 @@
   "bugs": {
     "url": "https://github.com/almeidx/ms/issues"
   },
-  "homepage": "https://github.com/almeidx/ms#readme"
+  "homepage": "https://github.com/almeidx/ms#readme",
+  "license": "MIT"
 }

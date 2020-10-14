@@ -11,9 +11,19 @@ or
 npm i @almeidx/ms
 ```
 
+## Usage
+```ts
+ms(val: string, long?: boolean): number;
+ms(val: number, long?: boolean): string;
+```
+
 ## Examples
 
 ```js
+import ms from '@almeidx/ms'
+// or
+const { ms } = require('@almeidx/ms')
+
 ms('2 days')  // 172800000
 ms('1d')      // 86400000
 ms('10h')     // 36000000
