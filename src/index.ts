@@ -4,7 +4,8 @@ const enum DURATION {
   HOUR = MINUTE * 60,
   DAY = HOUR * 24,
   WEEK = DAY * 7,
-  YEAR = DAY * 365.25,
+  YEAR = DAY * 365.24125,
+  MONTH = YEAR / 12,
 }
 
 const SEPERATORS = [' ', '.', ',', '-'];
@@ -43,6 +44,11 @@ function convert(num: number, type: string) {
     case 'yr':
     case 'y':
       return num * DURATION.YEAR;
+    case 'months':
+    case 'month':
+    case 'mos':
+    case 'mo':
+      return (num * DURATION.YEAR) / 12;
     case 'weeks':
     case 'week':
     case 'w':
@@ -100,6 +106,8 @@ function ms(val: string | number, long = false) {
 
   if (typeof val === 'number' && isFinite(val)) {
     abs = Math.abs(val);
+    if (abs >= DURATION.MONTH) return pluralize(val, abs, DURATION.MONTH, 'month', 'mo', long);
+    if (abs >= DURATION.WEEK) return pluralize(val, abs, DURATION.WEEK, 'week', 'w', long);
     if (abs >= DURATION.DAY) return pluralize(val, abs, DURATION.DAY, 'day', 'd', long);
     if (abs >= DURATION.HOUR) return pluralize(val, abs, DURATION.HOUR, 'hour', 'h', long);
     if (abs >= DURATION.MINUTE) return pluralize(val, abs, DURATION.MINUTE, 'minute', 'm', long);
