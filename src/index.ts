@@ -80,14 +80,14 @@ function convert(num: number, type: string) {
   }
 }
 
-function pluralize(milliseconds: number, msAbs: number, n: number, long: string, short: string, l = false) {
+function pluralize(milliseconds: number, msAbs: number, n: number, long: string, short: string, l = false, exact = false) {
   const plural = msAbs >= n * 1.5;
-  return `${Math.round(milliseconds / n)}${l ? ` ${long}${plural ? 's' : ''}` : short}`;
+  return `${exact ? (milliseconds / n) : Math.round(milliseconds / n)}${l ? ` ${long}${plural ? 's' : ''}` : short}`;
 }
 
-function ms(val: string, long?: boolean): number;
-function ms(val: number, long?: boolean): string;
-function ms(val: string | number, long = false) {
+function ms(val: string, long?: boolean, exact?: boolean): number;
+function ms(val: number, long?: boolean, exact?: boolean): string;
+function ms(val: string | number, long = false, exact = false) {
   let abs;
   let milliseconds = 0;
   if (typeof val === 'string' && val.length) {
@@ -106,12 +106,13 @@ function ms(val: string | number, long = false) {
 
   if (typeof val === 'number' && isFinite(val)) {
     abs = Math.abs(val);
-    if (abs >= DURATION.MONTH) return pluralize(val, abs, DURATION.MONTH, 'month', 'mo', long);
-    if (abs >= DURATION.WEEK) return pluralize(val, abs, DURATION.WEEK, 'week', 'w', long);
-    if (abs >= DURATION.DAY) return pluralize(val, abs, DURATION.DAY, 'day', 'd', long);
-    if (abs >= DURATION.HOUR) return pluralize(val, abs, DURATION.HOUR, 'hour', 'h', long);
-    if (abs >= DURATION.MINUTE) return pluralize(val, abs, DURATION.MINUTE, 'minute', 'm', long);
-    if (abs >= DURATION.SECOND) return pluralize(val, abs, DURATION.SECOND, 'second', 's', long);
+    if (abs >= DURATION.YEAR) return pluralize(val, abs, DURATION.YEAR, 'year', 'y', long, exact);
+    if (abs >= DURATION.MONTH) return pluralize(val, abs, DURATION.MONTH, 'month', 'mo', long, exact);
+    if (abs >= DURATION.WEEK) return pluralize(val, abs, DURATION.WEEK, 'week', 'w', long, exact);
+    if (abs >= DURATION.DAY) return pluralize(val, abs, DURATION.DAY, 'day', 'd', long, exact);
+    if (abs >= DURATION.HOUR) return pluralize(val, abs, DURATION.HOUR, 'hour', 'h', long, exact);
+    if (abs >= DURATION.MINUTE) return pluralize(val, abs, DURATION.MINUTE, 'minute', 'm', long, exact);
+    if (abs >= DURATION.SECOND) return pluralize(val, abs, DURATION.SECOND, 'second', 's', long, exact);
     return `${val}${long ? ' ' : ''}ms`;
   }
 
