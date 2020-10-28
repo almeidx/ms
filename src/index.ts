@@ -48,7 +48,7 @@ function convert(num: number, type: string) {
     case 'month':
     case 'mos':
     case 'mo':
-      return (num * DURATION.YEAR) / 12;
+      return num * DURATION.MONTH;
     case 'weeks':
     case 'week':
     case 'w':
