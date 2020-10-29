@@ -80,7 +80,15 @@ function convert(num: number, type: string) {
   }
 }
 
-function pluralize(milliseconds: number, msAbs: number, n: number, long: string, short: string, l = false, exact = false) {
+function pluralize(
+  milliseconds: number,
+  msAbs: number,
+  n: number,
+  long: string,
+  short: string,
+  l = false,
+  exact = false,
+) {
   const plural = msAbs >= n * 1.5;
   return `${exact ? (milliseconds / n) : Math.round(milliseconds / n)}${l ? ` ${long}${plural ? 's' : ''}` : short}`;
 }

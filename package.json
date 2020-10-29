@@ -8,7 +8,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "rimraf dist && tsc",
-    "lint": "eslint src --ext ts --fix",
+    "lint": "eslint src --ext ts",
+    "lint:fix": "eslint src --ext ts --fix",
     "prepublish": "rimraf dist && tsc",
     "test": "jest"
   },
