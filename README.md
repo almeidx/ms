@@ -1,3 +1,6 @@
+> [!CAUTION]
+> Deprecated. Use [parse-duration](<https://www.npmjs.com/package/parse-duration>) for parsing and [pretty-ms](<https://www.npmjs.com/package/pretty-ms>) for pretty-printing instead.
+
 # @almeidx/ms
 
 Use this package to easily convert various time formats to milliseconds.
